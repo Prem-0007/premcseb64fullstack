@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Counter</title>
+  </head>
+  <style>
+  body {
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    min-height:100vh;
+  
+}
+h1{
+    font-family:verdana;
+    margin-bottom:20px;
+    font-weight:bold;
+    font-size:25px;
+}
+span{
+   
+    font-size:130px;
+    font-family:verdana;
+    font-weight:bold;  
+}
+div{
+    display:flex;
+    flex-direction:column;
+    gap:30px;
+}
+.counterprog{
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    background:#f0f0f0;
+    padding:40px;
+    border-radius:20px;
+    box-shadow:0 0 10px rgba(0,0,0,0.1);
+}
+button{
+    font-size:40px;
+    border:none;
+    background:black;
+    color:white;
+    border-radius:20px;
+    padding:16px;
+    font-family:verdana;
+    position:relative;
+    z-index:3;
+    overflow:hidden;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    width:200px;
+}
+button::before{
+    position:absolute;
+    content:"";
+    width:100%;
+    height:80%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    z-index:-5;
+    animation:spin 3s linear infinite ;
+  background:linear-gradient(140deg,violet,blue);
+}
+@keyframes spin{
+    to{
+     rotate:360deg;
+    }
+}
+button::after{
+    position:absolute;
+    content:"";
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    inset:4px;
+    background:black;
+    z-index:-3;
+    border-radius:20px;
+}
+#increaseBtn::before{
+    position:absolute;
+    content:"";
+    background:linear-gradient(140deg,red,orange,yellow);
+}
+#decreaseBtn::before{
+    position:absolute;
+    content:"";
+    animation:spin 3s linear infinite reverse;
+} 
+
+#resetBtn::before{
+    position:absolute;
+    content:"";
+    background:linear-gradient(140deg,cyan,pink,violet);
+}</style>
+  <body>
+    <div class="counterprog">
+        <h1>Counter</h1>
+        <span id="value" >0</span>
+    
+          <button id="decreaseBtn" onclick="decrease() 
+          ">decrease</button>
+          <button id="resetBtn" onclick="reset()">reset</button>
+          <button id="increaseBtn" onclick="increase()">increase</button>
+    </div>
+    <script>
+  let count = 0;
+
+  const value = document.getElementById("value");
+  const decreaseBtn = document.getElementById("decreaseBtn");
+  const  resetBtn = document.getElementById("resetBtn");
+  const increaseBtn = document.getElementById("increaseBtn");
+
+
+  function updateColor() {
+    if (count > 0) {
+      value.style.color = "green";
+    } else if (count < 0) {
+      value.style.color = "red";
+    } else {
+      value.style.color = "#222";
+    }
+  }
+
+  function increase() {
+    count++;
+    value.innerHTML = count;
+    updateColor();
+  }
+
+  function decrease() {
+    count--;
+    value.innerHTML = count;
+    updateColor();
+  }
+
+  function reset() {
+    count = 0;
+    value.innerHTML = count;
+    updateColor();
+  }
+  </script>
+  </body>
+</html>
