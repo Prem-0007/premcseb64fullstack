@@ -115,9 +115,8 @@ button::after{
 
   const value = document.getElementById("value");
   const decreaseBtn = document.getElementById("decreaseBtn");
-  const  resetBtn = document.getElementById("resetBtn");
+  const resetBtn = document.getElementById("resetBtn");
   const increaseBtn = document.getElementById("increaseBtn");
-
 
   function updateColor() {
     if (count > 0) {
@@ -134,7 +133,6 @@ button::after{
     value.innerHTML = count;
     updateColor();
   }
-
   function decrease() {
     count--;
     value.innerHTML = count;
