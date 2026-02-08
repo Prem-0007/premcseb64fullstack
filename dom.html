@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>DOM Card</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f2f2f2;
+    }
+    .card {
+      width: 240px;
+      padding: 15px;
+      margin: 50px auto;
+      background: rgb(116, 52, 52);
+      border-radius: 8px;
+      text-align: center;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+    button {
+      padding: 8px 12px;
+      border: none;
+      background: #007bff;
+      color: white;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <h3 id="text">Hello prem</h3>
+    <button onclick="changeText()">Change Text</button>
+  </div>
+
+  <script>
+    function changeText() {
+      const el = document.getElementById("text");
+      el.textContent = "TEXT CHANGED BOT";
+      el.style.color = "red";
+    }
+  </script>
+
+</body>
+</html>
