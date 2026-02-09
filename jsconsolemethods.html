@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript Console Methods</title>
+</head>
+<body>
+    <script>
+        console.log("This is a log message.");
+        console.info("This is an info message.");
+        console.warn("This is a warning message.");
+        console.error("This is an error message.");
+        console.debug("This is a debug message.");
+        console.table([{name: "lorem", age: 18}, {name: "ipsum", age: 27}]);
+        console.time("Timer");
+        for (let i = 0; i < 100; i++) {
+            console.log(i);
+        }
+        console.timeEnd("Timer");
+        console.group("Grouped Messages");
+        console.log("Message 1 in group");
+        console.log("Message 2 in group");
+        console.groupEnd();
+        console.assert(1 === 2, "This assertion failed: 1 is not equal to 2");
+        console.dir(document.body);
+        console.count("Counted Message");
+        console.count("Counted Message");
+        console.count("Counted Message");
+      </script>
+</body>
+</html>

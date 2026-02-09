@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>User Card</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f2f2f2;
+    }
+    .card {
+      width: 250px;
+      padding: 15px;
+      margin: 50px auto;
+      background: rgb(197, 157, 157);
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+    .card h2 {
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <h2 id="name"></h2>
+    <p>Age: <span id="age"></span></p>
+    <p>Marks: <span id="marks"></span></p>
+    <p>Total: <span id="total"></span></p>
+    <p>Average: <span id="average"></span></p>
+  </div>
+
+  <script>
+    const user = {
+      name: "Prem Kumar",
+      age: 18,
+      marks: [80, 75, 90]
+    };
+
+    const totalMarks = m => m.reduce((s, v) => s + v, 0);
+    const averageMarks = m => totalMarks(m) / m.length;
+
+    document.getElementById("name").textContent = user.name;
+    document.getElementById("age").textContent = user.age;
+    document.getElementById("marks").textContent = user.marks.join(", ");
+    document.getElementById("total").textContent = totalMarks(user.marks);
+    document.getElementById("average").textContent = averageMarks(user.marks).toFixed(2);
+  </script>
+
+</body>
+</html>

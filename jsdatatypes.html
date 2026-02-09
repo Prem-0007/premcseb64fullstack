@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript Datatypes</title>
+</head>
+<body>
+    <script>
+        let name = "Lorem Ipsum";
+        console.log("String:", name);
+
+        let age = 25;
+        console.log("Number:", age);
+
+        let weight = 70.5;
+        console.log("Float:", weight);
+
+         let x= Infinity;
+         console.log("Infinity:", x);
+
+         let y =NaN;
+            console.log("NaN:", y);
+
+
+        let isStudent = true;
+        console.log("Boolean:", isStudent);
+
+    
+        let address;
+        console.log("Undefined:", address);
+
+    
+        let phone = null;
+        console.log("Null:", phone);
+
+    
+        let person = {
+            firstName: "Prem",
+            lastName: "Bot",
+            age: 18
+        };
+        console.log("Object:", person);
+
+    
+        let colors = ["Red", "Green", "Blue"];
+        console.log("Array:", colors);
+
+    
+        let id1 = Symbol("ID123");
+        let id2 = Symbol("ID456");
+        let sym = id1 === id2 ? "Same" : "Different";
+        console.log("Symbol:", id1);
+        console.log("Symbol:", id2);
+        console.log("Symbol Comparison:", sym);
+
+        let bigIntNum = BigInt(9007199254740991);
+        console.log("BigInt:", bigIntNum);
+
+        function hello() {
+            return "Hello, World!";
+        }
+        hello();
+        console.log("Function:", hello);
+
+        let today = new Date();
+        console.log("Date:", today);
+
+        let map = new Map();
+        console.log("Map:", map);
+
+    </script>
+</body>
+</html>
